@@ -4,35 +4,82 @@ Professor: Leandro Otávio Cordova Vieira
 Turma: 5ª Fase - São Miguel do Oeste
 Curso: Ciência da Computação - UNOESC
 
-🛡️ Sistema de Autenticação Simples em PHP
+🛡️ Sistema de Login em PHP com JSON
 
-Este projeto é uma aplicação básica de login e cadastro de usuários desenvolvida com PHP puro, focada em fins didáticos. Ele simula um sistema de autenticação sem utilizar banco de dados, armazenando os usuários em um arquivo `.json`. Ideal para quem está aprendendo os fundamentos de autenticação, sessões e organização de código com classes.
+Este projeto é um sistema simples de autenticação de usuários feito com PHP puro, ideal para fins didáticos. Ele não utiliza banco de dados, mas sim um arquivo `.json` para simular o armazenamento dos usuários cadastrados.
 
 ✨ Funcionalidades
 
 - Cadastro de novos usuários com senha criptografada.
-- Login com opção de lembrar o e-mail.
-- Painel protegido que só pode ser acessado após login.
-- Logout para encerrar a sessão.
-- Armazenamento de dados em arquivo JSON (sem necessidade de banco de dados).
-- Estilo visual limpo e centralizado usando apenas HTML e CSS.
+- Login com a opção de lembrar o e-mail.
+- Painel do usuário visível somente após o login.
+- Logout com destruição de sessão.
+- Armazenamento de usuários em um arquivo `usuarios.json`.
+- Visual simples e centralizado com HTML e CSS puro.
 
 🗂️ Estrutura do Projeto
 
-- `/Classes` – Contém as classes `Usuario`, `Sessao` e `Autenticador`.
-- `/data/usuarios.json` – Arquivo que armazena os usuários registrados.
-- Páginas principais:
-  - `cadastro.php` – Tela de registro.
-  - `processa_cadastro.php` – Processa o cadastro e salva no JSON.
-  - `login.php` – Tela de login com campo para lembrar e-mail.
-  - `processa_login.php` – Verifica credenciais e inicia sessão.
-  - `dashboard.php` – Painel acessível apenas após login.
-  - `logout.php` – Encerra a sessão do usuário.
+O projeto possui a seguinte estrutura de arquivos:
 
-💡 Objetivo
+- /Classes
+  - Autenticador.php
+  - Sessao.php
+  - Usuario.php
+- /data
+  - usuarios.json
+- index.php
+- cadastro.php
+- processa_cadastro.php
+- login.php
+- processa_login.php
+- dashboard.php
+- logout.php
 
-O projeto tem como foco o aprendizado prático de conceitos como:
-- Criação e utilização de sessões em PHP.
-- Criptografia de senhas com `password_hash` e `password_verify`.
-- Estruturação de código em múltiplas classes.
-- Separação entre lógica de back-end e interface de front-end.
+📋 Requisitos
+
+- PHP
+- Navegador
+- Servidor Apache, PHP embutido ou Docker
+
+ 🚀 Como rodar o projeto
+
+Sem Docker (modo simples)
+
+1. Crie a pasta `data` na raiz do projeto.
+2. Dentro dela, crie um arquivo chamado `usuarios.json` com o conteúdo `{}`.
+3. Execute no terminal, dentro da pasta do projeto:
+
+   php -S localhost:8080
+
+4. Acesse o projeto no navegador pelo endereço:
+
+   http://localhost:8080
+
+Com Docker (opcional)
+
+1. Instale o Docker.
+2. Execute o seguinte comando na raiz do projeto:
+
+   docker run -d -p 8080:80 -v $(pwd):/var/www/html php:8.2-apache
+
+3. Acesse o navegador em:
+
+   http://localhost:8080
+
+✅ Como usar
+
+1. Acesse `cadastro.php` e registre um novo usuário.
+2. Vá para `login.php` e faça o login com os dados cadastrados.
+3. Você será direcionado para `dashboard.php`.
+4. Clique em "Sair" para fazer logout.
+
+📚 Objetivo
+
+O projeto foi desenvolvido com o objetivo de praticar:
+
+- Programação orientada a objetos em PHP.
+- Sessões e controle de autenticação.
+- Criptografia de senhas com `password_hash`.
+- Armazenamento e leitura de dados usando JSON.
+- Organização do código em classes reutilizáveis.
+
