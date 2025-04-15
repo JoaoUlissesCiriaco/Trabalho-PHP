@@ -1,4 +1,8 @@
-
+👨‍💻 Aluno 
+Nome: João Ulisses Porto Alegre Ciriaco Teixeira
+Professor: Leandro Otávio Cordova Vieira
+Turma: 5ª Fase - São Miguel do Oeste
+Curso: Ciência da Computação - UNOESC
 
 🛡️ Sistema de Autenticação Simples em PHP
 
